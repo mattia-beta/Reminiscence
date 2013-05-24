@@ -1,0 +1,43 @@
+<div class="container" id="memory-show">
+
+  <div class="row span12 blocco" id="title_bar">
+
+    <div class="span1 indietro">
+      <center>
+        <%= link_to (image_tag "indietro.png", :size => "35x35"), senior_path(@senior) %>
+      </center>
+    </div>
+
+    <div class="span10">
+      <center>
+        <%= image_tag("write.png", :size => "70x70") %>
+        Visualizza un <span class="blue_text">ricordo</span>
+      </center>
+    </div>
+
+    <div class="span1">
+      &nbsp;
+    </div>
+
+  </div>
+
+
+  <div class="row span12 show-ricordo">
+
+      <div class="span5" id="image">
+        <center>
+          <%= image_tag @memory.image.to_s, :size => "350x40" %>
+        </center>
+      </div>
+
+      <div class="span6" id="testi">
+        <h1 id="titolo"> <%= @memory.titolo %> </h1>
+        <br>
+        <p id="testo_racconto"> <%= @memory.testo %> </p>
+        <br>
+        <div class="info" style="float:right"> <%= @memory.luogo %>,  <%= @memory.data.to_time.strftime('%B %e %Y') %>  </div>
+      </div>
+
+  </div>
+
+</div>

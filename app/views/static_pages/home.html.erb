@@ -1,0 +1,103 @@
+<% provide(:title, 'Home') %>
+
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
+
+
+<div class="row">
+
+
+  <%=
+      if !flash[:notice].nil?
+            render 'layouts/error'
+      end
+  %>
+
+  <div class="span12 nonnino">
+
+    <div class="row span4 offset5 box_home">
+        <div class="row span4 slogan">
+            <span>
+                <h3>
+                  <%= image_tag("rewind.png", :size => "16x16") %>
+                  Rewind. Remind.
+                </h3>
+                <h1>Reminiscence!</h1>
+            </span>
+        </div>
+
+        <div class="row span4">
+          <%= link_to image_tag("facebook.png"), @auth_url, :class=>"button"%>
+
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row barra">
+  <div class="span6 barra-item">
+        <div class="row barra-img">
+             <div class="span6">
+               <%= image_tag("lampadina.jpg", :size => "140x60") %>
+             </div>
+        </div>
+
+        <div class="row">
+          <div class="span6">
+                    <p class="barra-testo barra-testo-center ">
+                      Crea il tuo diario, costruisci la tua linea del tempo. Non far tramontare i tuoi ricordi. Condividi le tue memorie con le persone a te care
+                    </p>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="span6 barra-item">
+    <div class="row barra-img">
+      <div class="span6">
+        <%= image_tag("occhiali.jpg", :size => "160x60") %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span6">
+        <p class="barra-testo barra-testo-center">
+          Esplora il passato attraverso racconti, immagini, musica, documenti che stimoleranno la tua memoria. Lasciati trasportare dai racconti
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row presentazione_grigia">
+      <div class="span5">
+        <center>
+                <%= image_tag("presentazione.jpg", :size => "400x200") %>
+        </center>
+      </div>
+
+     <div class="span6 presentazione_grigia_box">
+        <p class="barra-testo">
+          Ricorda il tuo passato e tramanda le tue storie di vita. Le nuove generazioni potranno così scoprire la storia attraverso le tue testimonianze. I racconti orali sono sicuramente più diretti ed efficaci; per questo con Reminiscence hai la possibilità di registrare e ascoltare la voce
+        </p>
+    </div>
+</div>
+
+<div class="row presentazione_bianca">
+
+      <div class="span6 presentazione_bianca_box">
+        <p class="barra-testo">
+          Quale strumento più pratico di un albero genealogico ti consente di ripercorrere le generazioni della tua famiglia? Torna indietro nel tempo verso le tue origini! Rivela la storia della tua famiglia e ricostruisci il cammino che ti ha accompagnato fino a qui... Viaggia nel tempo
+        </p>
+      </div>
+
+      <div class="span5">
+             <center>
+                <%= image_tag("troppo_figa_punto_ok.jpg", :size => "400x200") %>
+            </center>
+      </div>
+</div>
+

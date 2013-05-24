@@ -1,0 +1,31 @@
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span8">
+    <center>
+      <%= image_tag("write.png", :size => "70x70") %>
+      Ecco il tuo <span class="blue_text">albero genealogico</span>
+    </center>
+  </div>
+
+  <div class="span3">
+    &nbsp;
+  </div>
+</div>
+
+
+<%= javascript_include_tag "tree" %>
+
+
+
+<div class="row">
+  <div class="span12 tree">
+
+  </div>
+</div>

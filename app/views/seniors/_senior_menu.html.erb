@@ -1,0 +1,72 @@
+<div class="row span3 btn-box">
+    <div style="float: left">
+        <%= image_tag "past.png", :size => "60x60" %>
+    </div>
+
+    <div class="btn-testo">
+        <span>Esplora periodo</span>
+    </div>
+</div>
+
+
+<div class="row span3 btn-box">
+    <div style="float: left">
+        <%= image_tag "no_image.png", :size => "60x60" %>
+    </div>
+
+    <div class="btn-testo">
+        <span>Cerca ricordo</span>
+    </div>
+</div>
+
+
+<%= link_to(senior_memories_path(@senior)) do%>
+    <div class="row span3 btn-box">
+        <div style="float: left">
+            <%= image_tag "fiore.png", :size => "60x60" %>
+        </div>
+
+        <div class="btn-testo">
+            <span>La mia vita</span>
+        </div>
+    </div>
+<% end %>
+
+
+<%= link_to(friendships_find_path) do %>
+    <div class="row span3 btn-box">
+        <div style="float: left">
+            <%= image_tag "friend.png", :size => "60x60" %>
+        </div>
+
+        <div class="btn-testo">
+            <span>Cerca amico</span>
+        </div>
+    </div>
+<% end %>
+
+
+<%= link_to (new_senior_memory_path(@senior)) do %>
+    <div class="row span3 btn-box">
+        <div style="float: left">
+            <%= image_tag "writeee.png", :size => "60x60" %>
+        </div>
+
+        <div class="btn-testo">
+            <span>Aggiungi ricordo</span>
+        </div>
+    </div>
+<% end %>
+
+
+<%= link_to (senior_tree_path(@senior)) do %>
+    <div class="row span3 btn-box">
+        <div style="float: left">
+            <%= image_tag "albero.png", :size => "70x70" %>
+        </div>
+
+        <div class="btn-testo" id="menutree">
+          <span>Albero genealogico</span>
+        </div>
+    </div>
+<% end %>

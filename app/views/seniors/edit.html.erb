@@ -1,0 +1,92 @@
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+      <%= image_tag("write.png", :size => "70x70") %>
+      Modifica le tue <span class="blue_text">informazioni</span>
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+<div class="row box_grigio">
+  &nbsp;
+</div>
+
+
+<div class="row">
+  <div class="span12">
+
+    <% if @senior.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            <!-- pluralize rende plurale parola-->
+            The form contains <%= pluralize(@senior.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @senior.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="row add_form">
+
+  <%= form_for @senior, :html => { :multipart => true } do |f| %>
+
+      <div class="span5 offset2">
+
+        <%= f.label :name, "Come ti chiami?" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :surname, "Qual'è il tuo cognome?" %>
+        <%= f.text_field :surname %>
+
+        <%= f.label :city, "Dove vivi?" %>
+        <%= f.text_field :city %>
+
+        <%= f.label :birthday, "Quando sei nato? (gg/mm/aaaa)" %>
+        <%= f.text_field :birthday %>
+
+
+
+        <br> <br>
+        <%= f.submit "Aggiorna utente", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+      <div class="span5">
+
+        <%= image_tag @senior.image_url.to_s, :size => "250x250"  %> <br> <br>
+
+
+        <%= f.label :image, "Cambia la tua foto" %>
+        <%= f.file_field :image %>
+
+      </div>
+
+  <% end %>
+
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+  @mixin box_grigio
+  {
+      background-color: #ededed;
+      margin-bottom: 20px;
+      margin-left: 0px;
+
+      border-top-color: #dedede;
+      border-top-width: 1px;
+      border-top-style: solid;
+
+      border-bottom-color: #dedede;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+  }
+
+  .box_grigio
+    {
+    @include box_grigio;
+
+    height: 60px;
+  }
+
+  @mixin testi
+  {
+    font-size: 14px;
+  }
+
+  .add_form
+    {
+    label
+      {
+       @include testi;
+    }
+
+    img
+      {
+      margin: 5px 5px 5px 5px;
+      }
+  }
+
+  .suggest
+    {
+    @include box_grigio;
+
+    padding: 10px 20px 10px 10px;
+    margin-top: 30px;
+
+    @include testi;
+    text-align: right;
+  }
+
+  #foto
+    {
+    text-align: right;
+  }

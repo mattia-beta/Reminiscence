@@ -1,0 +1,42 @@
+<div class="row blocco">
+
+  <div class="row" id="title_bar">
+        <div class="span12">
+                <center>
+                    <%= image_tag("touch_icon.png", :size => "70x70") %>
+                    Tocca la <span class="blue_text">tua foto</span> per iniziare
+                </center>
+        </div>
+  </div>
+
+
+  <div class="row" id="senior_index">
+        <div class="span12">
+
+                <div class="row index_container">
+
+                        <% for senior in @seniors do %>
+                                <%= render senior %>
+                        <% end %>
+
+
+                      <div class="span4">
+                            <div class="row index_image">
+                                  <div class="span4" id="add_new">
+                                        <%=  link_to (image_tag "Add-icon_box.png", :size => "500x150"), new_senior_path %>
+                                  </div>
+                            </div>
+
+                             <div class="row index_name" >
+                                  <div class="span4">
+                                            Aggiungi nuovo
+                                  </div>
+                             </div>
+                      </div>
+
+                </div>
+
+        </div>
+  </div>
+
+</div>

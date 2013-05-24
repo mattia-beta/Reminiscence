@@ -1,0 +1,99 @@
+
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+      <p>
+        <%= image_tag("write.png", :size => "70x70") %>
+        Inserisci alcune <span class="blue_text">informazioni</span> su di te
+      </p>
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+<div class="row box_grigio">
+  &nbsp;
+</div>
+
+
+<div class="row">
+  <div class="span12">
+
+    <% if @senior.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            <!-- pluralize rende plurale parola-->
+            The form contains <%= pluralize(@senior.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @senior.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="row add_form">
+
+   <%= form_for @senior, :html => {:multipart => true} do |f| %>
+
+          <div class="span4 offset2">
+
+                  <%= f.label :name, "Come ti chiami?" %>
+                  <%= f.text_field :name %>
+
+                  <%= f.label :surname, "Qual'è il tuo cognome?" %>
+                  <%= f.text_field :surname %>
+
+                  <%= f.label :city, "Dove vivi?" %>
+                  <%= f.text_field :city %>
+
+                  <%= f.label :birthday, "Quando sei nato? (gg/mm/aaaa)" %>
+                  <%= f.text_field :birthday %>
+
+          </div>
+
+          <div class="span4">
+
+                <br>
+                <%= image_tag "no_avatar.jpg", size: "200x100" %>  <br><br>
+
+                <%=  f.label :image, "Carica una tua foto" %>
+                <%= f.file_field :image %>
+
+          </div>
+
+          <div class="span2">
+
+            &nbsp;
+
+          </div>
+
+          <div class="row span12">
+
+            <br><br>
+            <%= f.submit "Inserisci utente", class: "btn btn-large btn-primary" %>  &nbsp;
+
+          </div>
+
+  <% end %>
+
+
+</div>
+
+<%= javascript_include_tag "senior" %>

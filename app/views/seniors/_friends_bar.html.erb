@@ -1,0 +1,33 @@
+
+    <% for friendship in @senior.friendships %>
+        <div class="faccia row">
+
+            <div class="span2 foto">
+                <%= link_to (image_tag friendship.friend.image_url.to_s, :size => "120x40"), senior_preview_path(friendship.friend) %>
+            </div>
+
+            <div class="span1 nome">
+                <%= friendship.friend.name %>
+                (<%= link_to "Rimuovi", friendship_path(friendship, :senior_id => @senior), :method => :delete %>)
+            </div>
+
+        </div>
+    <% end %>
+
+
+
+
+
+        <% for senior in @senior.inverse_friends %>
+            <div class="faccia row">
+
+                <div class="span2 foto">
+                    <%= link_to (image_tag senior.image_url.to_s, :size => "120x40"), senior_preview_path(senior) %>
+                </div>
+
+                <div class="span1 nome">
+                    <%= senior.name %>
+                </div>
+
+            </div>
+        <% end %>

@@ -1,0 +1,14 @@
+<div class="blocco row span12">
+
+  <h3>NOME: <%= @event.name %></h3>
+
+  <h3 style="color:gray">DESC: <%= @event.description %></h3>
+
+  <h3>ANNO: <%= @event.date %></h3>
+
+  <h3>TIPO: <%= @event.kind %></h3>
+
+  <%= image_tag @event.image_url.to_s, :size => "300x100" %>
+
+</div>
+

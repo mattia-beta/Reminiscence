@@ -1,0 +1,16 @@
+Looping through your statuses:<br />
+<ul>
+
+  <%= if !@graph_data.nil?
+
+         @graph_data.each do |status|
+           status[1]
+         end
+
+         @graph_data["id"]
+      end
+
+     debug @graph_data
+  %>
+
+</ul>

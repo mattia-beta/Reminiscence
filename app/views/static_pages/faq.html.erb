@@ -1,0 +1,427 @@
+<% provide(:title, 'FAQ') %>
+
+
+<div class="row blocco" id="title_bar">
+      <div class="span1 indietro">
+        <center>
+          <a href="javascript:history.back()">
+            <%= image_tag("indietro.png", :size => "35x35") %>
+          </a>
+        </center>
+      </div>
+
+      <div class="span10">
+            <center>
+                  <%= image_tag("touch_icon.png", :size => "70x70") %>
+                  Hai bisogno di
+                  <span class="blue_text">aiuto</span>
+                  ?
+            </center>
+      </div>
+
+      <div class="span1">
+        &nbsp;
+      </div>
+</div>
+
+
+<div class="row menu-faq">
+
+    <div class="span3 bottone b-right b-bottom" gruppo="ricordi">
+      <a href="#">
+        <div class="span1 logo"><%= image_tag "writeee.png", :size => "30x30" %></div>
+        <div class="span2 bottone-testo"> Aggiunta e dettaglio dei miei ricordi</div>
+      </a>
+    </div>
+
+
+    <div class="span3 bottone b-right b-bottom" gruppo="amici">
+      <a href="#" class="">
+        <div class="span1 logo"><%= image_tag "friend.png", :size => "30x30" %></div>
+        <div class="span2 bottone-testo"> Gestione delle amicizie e delle relazioni</div>
+      </a>
+    </div>
+
+
+    <div class="span3 bottone b-bottom" gruppo="periodi">
+      <a href="#" class="">
+        <div class="span1 logo"><%= image_tag "past.png", :size => "40x40" %></div>
+        <div class="span2 bottone-testo"> Esplorazione di un periodo storico</div>
+      </a>
+    </div>
+
+
+    <div class="span3 bottone b-right" gruppo="vita">
+      <a href="#" class="">
+        <div class="span1 logo"><%= image_tag "fiore.png", :size => "30x30" %></div>
+        <div class="span2 bottone-testo"> Linea del tempo della mia vita</div>
+      </a>
+    </div>
+
+
+    <div class="span3 bottone b-right" gruppo="albero">
+      <a href="#" class="">
+        <div class="span1 logo"><%= image_tag "albero.png", :size => "30x30" %></div>
+        <div class="span2 bottone-testo"> Albero genealogico della mia famiglia</div>
+      </a>
+    </div>
+
+
+    <div class="span3 bottone" gruppo="cerca">
+      <a href="#" class="">
+        <div class="span1 logo"><%= image_tag "no_image.png", :size => "30x30" %></div>
+        <div class="span2 bottone-testo"> Ricerca di un mio ricordo</div>
+      </a>
+    </div>
+
+</div>
+
+<!-- INIZIO AREA FAQ -->
+<div class="row" id="faq">
+
+    <div class="span12">
+
+
+          <!--  PRIMO ACCORDITION -->
+          <div class="accordion" id="domande-ricordi">
+
+            <div class="accordion-group" categoria = "generale">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#ricordi-one">
+                  Come modifico le mie informazioni personali?
+                </a>
+              </div>
+              <div id="ricordi-one" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Nella pagina principale premo la casella “Modifica informazioni” vicino alla mia foto
+                  <br><br>
+
+                    <center>
+                      <div class="row" id="bottoni">
+                        <p>
+                          <button class="btn btn-small" type="button">Modifica informazioni</button>
+                          <button class="btn btn-danger btn-small" type="button">Cancella account</button>
+                        </p>
+                      </div>
+                    </center>
+
+                  <br><br>
+                    Modifico i campi da cambiare e premo “Aggiorna utente” per salvare le modifiche
+                  <br><br>
+                  <center>
+                    <%= image_tag "demo/info_personali.png", :size => "250x320" %>
+                  <br><br>
+                  </center>
+                  <br><br>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#ricordi-two">
+                  Come inserisco un racconto?
+                </a>
+              </div>
+              <div id="ricordi-two" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Nella pagina principale premo il bottone “Aggiungi ricordo” e compilo i campi
+                    <br><br>
+                  <center>
+                    <%= image_tag "demo/aggiungi_ricordo.png", :size => "200x300" %>
+                    <br><br>
+                  </center>
+                  <center>
+                     <%= image_tag "demo/inserisci_ricordo1.png", :size => "250x320" %>
+                    <br><br>
+                  </center>
+                  Durante la digitazione, sulla destra, appaiono suggerimenti, ad esempio immagini,
+                  che stimolano la mia memoria
+                  Decido poi se rendere pubblica o meno la mia storia
+                  <br><br>
+                  <center>
+                      <%= image_tag "demo/inserisci_ricordo2.png", :size => "180x260" %>
+                     <br><br>
+                  </center>
+                  Infine posso caricare una foto da allegare al mio ricordo e poi premo su “Inserisci ricordo”
+                   <br><br>
+                  <center>
+                    <%= image_tag "demo/inserisci_ricordo3.png", :size => "320x450" %>
+                   <br><br>
+                  </center>
+                  <center>
+                    <%= image_tag "demo/inserisci_ricrordo4.png", :size => "180x260" %>
+                   <br><br>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINE PRIMO ACCORDITION -->
+
+
+          <!--  SECONDO ACCORDITION -->
+          <div class="accordion hide" id="domande-amici">
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#amici-one">
+                    Come cerco un amico?
+                  </a>
+                  <div id="amici-one" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Nella pagina principale premo il bottone “Cerca amico”. Scrivo poi nella casella il nome della persona
+                      da cercare e premo sulla foto che appare sotto. Si aprirà una sorta di “diario” della persona
+                      <br><br>
+                      <center>
+                        <%= image_tag "demo/cerca_amico.png", :size => "320x450" %>
+                      <center>
+                        <%= image_tag "demo/aggiungi_mario.png", :size => "320x450" %>
+                        <br><br>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#amici-two">
+                    Come aggiungo amici?
+                  </a>
+                <div id="amici-two" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    Nella pagina principale premo il bottone “Cerca Amico” e digito il nome e/o cognome della persona che voglio cercare
+                    <br><br>
+                    <center>
+                      <%= image_tag "demo/cerca_amico.png", :size => "320x450" %>
+                      <br><br>
+                    </center>
+                    Compariranno gli utenti collegati ai parametri della ricerca
+                    <br><br>
+                    <center>
+                      <%= image_tag "demo/aggiungi_mario_freccia.png", :size => "320x450" %>
+                      <br><br>
+                    </center>
+                    Infine premo "Aggiungi amico"
+                    <br><br>
+                    <center>
+                      <%= image_tag "demo/aggiungi_amico.png", :size => "120x250" %>
+                      <br><br>
+                    </center>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#amici-three">
+                      Come visualizzo i ricordi di un amico?
+                    </a>
+                    <div id="amici-three" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        Nella pagina principale sotto i sei bottoni del menu a sinistra, ci sono gli utenti nostri amici.
+                        Cerco la persona desiderata e clicco sulla foto per visualizzare il suo profilo
+                        <br><br>
+                        <center>
+                          <%= image_tag "demo/rimuovi_mario.png", :size => "320x450" %>
+                          <br><br>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#amici-four">
+                    Come rimuovere un amico?
+                  </a>
+                  <div id="amici-four" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Nella pagina principale sotto i sei bottoni del menu a sinistra, ci sono gli utenti nostri amici
+                      <br><br>
+                      <center>
+                        <%= image_tag "demo/rimuovi_mario_freccia.png", :size => "320x450" %>
+                        <br><br>
+                      </center>
+                      Vicino all'amico da cancellare premo la scritta "Rimuovi"
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+            <!-- FINE SECONDO ACCORDITION -->
+
+
+            <!-- TERZO ACCORDITION -->
+            <div class="accordion hide" id="domande-periodi">
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#periodi-one">
+                    Come esploro un periodo?
+                  </a>
+                    <div id="periodi-one" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        Nella pagina principale premo il bottone “Esplora periodo” e compilo i campi.
+                        Mi appaiono successivamente tutti i miei ricordi riguardanti tale periodo.
+                        In aggiunta vedo anche tutti i ricordi che i miei amici hanno reso pubblici e che
+                        sono successi in quel periodo.
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#periodi-two">
+                    Question
+                  </a>
+                    <div id="periodi-two" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        Answer
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- FINE TERZO ACCORDITION -->
+
+
+            <!-- QUARTO ACCORDITION -->
+            <div class="accordion hide" id="domande-vita">
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#vita-one">
+                    Come uso la linea del tempo?
+                  </a>
+                  <div id="vita-one" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Nella pagina principale premo il bottone “La mia vita”. In basso è situata la linea del tempo. <br>
+                      Posso scorrerla selezionando periodi/avvenimenti oppure posso saltare da un ricordo all'altro
+                      premendo la freccia a lato
+                      <br><br>
+                      <center>
+                        <%= image_tag "demo/timeline.png", :size => "380x500" %>
+                        <br><br>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#vita-two">
+                    Question
+                  </a>
+                  <div id="vita-two" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Answer
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FINE QUARTO ACCORDITION -->
+
+
+            <!-- QUINTO ACCORDITION -->
+            <div class="accordion hide" id="domande-albero">
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#albero-one">
+                    Come creo l'albero genealogico?
+                  </a>
+                  <div id="albero-one" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                      ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+                      hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+                      eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
+                      feugait nulla facilisi
+                      <br><br>
+                      <center>
+                        <%= image_tag "demo/Albero genealogico.png", :size => "320x450" %>
+                        <br><br>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#albero-two">
+                    Question
+                  </a>
+                  <div id="albero-two" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Answer
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FINE QUINTO ACCORDITION -->
+
+
+            <!-- SESTO ACCORDITION -->
+            <div class="accordion hide" id="domande-cerca">
+
+              <div class="accordion-group" categoria = "generale">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#cerca-one">
+                    Come cerco un racconto?
+                  </a>
+                  <div id="cerca-one" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                      ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+                      hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+                      eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
+                      feugait nulla facilisi
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#cerca-two">
+                    Question
+                  </a>
+                  <div id="cerca-two" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      Answer
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- FINE SESTO ACCORDITION -->
+
+
+    </div>
+
+</div>
+
+
+<%= javascript_include_tag "faq" %>

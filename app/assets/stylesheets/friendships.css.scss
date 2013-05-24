@@ -1,0 +1,112 @@
+// Place all the styles related to the friendships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin polaroid
+{
+    //bordo bianco
+    background-color: white;
+    padding: 10px;
+
+    //bordo
+    border-color: #d4d4d4;
+    border-style: solid;
+    border-width: 1px;
+
+    //ombrina
+    -moz-box-shadow: 2px 6px 10px #cacaca;
+    -webkit-box-shadow: 2px 6px 10px #cacaca;
+    box-shadow: 2px 6px 10px #cacaca;
+}
+
+
+#friendships
+{
+    margin-bottom: 50px;
+    margin-top: 60px;
+
+    #ricerca-amici
+    {
+        margin-bottom: 45px;
+        text-align: center;
+
+        label
+        {
+          font-size: 17px;
+          margin-bottom: 10px;
+          margin-left: -70px;
+        }
+    }
+
+    #nome-amico
+    {
+      margin-bottom: 0;
+    }
+
+    .friend
+     {
+         .foto
+         {
+               @include polaroid;
+         }
+
+
+        .index_name
+         {
+               margin-top: 15px;
+               font-weight: bold;
+               font-size: 15px;
+
+               a
+               {
+                 font-size: 14px;
+                 font-weight: normal;
+                 margin-top: 20px;
+                 line-height: 40px;
+               }
+         }
+
+
+        .index_image
+         {
+
+         }
+
+         margin-bottom: 40px;
+     }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1200px)
+{
+  #friendships
+  {
+    .friend
+    {
+      margin-left: 0;
+      margin-right: 35px;
+    }
+
+    .span4
+    {
+      width: 285px;
+    }
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px)
+{
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+  #friendships
+  {
+    margin-top: 0px
+  }
+}

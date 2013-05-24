@@ -1,0 +1,93 @@
+<%= render "layouts/error" %>
+
+<div class="row" id="senior_show" style="margin-top: 80px;">
+
+  <div class="span3">
+
+        <div class="row span3 btn-bar">
+          <%= render "senior_menu" %>
+        </div>
+
+
+        <div class="row" id="friend_bar">
+          <center>
+            <%= render "seniors/friends_bar" %>
+          </center>
+        </div>
+
+  </div>
+
+  <div class="span8" id="friend_bar" style="margin-left: 80px;">
+
+    <div class="row">
+
+            <div class="span5">
+
+                <div class="row" id="title_bar" >
+                    <center>
+                        <%= image_tag("touch_icon.png", :size => "70x70") %>
+                        Ciao <span class="blue_text"><%= @senior.name.titleize + " " + @senior.surname.titleize %></span>, come stai?
+                    </center>
+                </div>
+
+                <div class="row">
+                  <div class="span4 well mywell text">
+                    <span> <%= @frase %> </span>    <br>
+                    <%=  link_to "Raccontacelo",  new_senior_memory_path(@senior), :class => "btn btn-primary" %>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="span3" id="img_persona">
+                <center>
+                  <%=  img_path = @senior.image_url.to_s
+                       if img_path == ""
+                         link_to (image_tag "no_avatar.jpg", :size => "250x250"), "#"
+                       else
+                         link_to (image_tag img_path, :size => "250x250"), @senior.image_url.to_s
+                       end
+                  %>
+                </center>
+            </div>
+
+    </div>
+
+    <div class="row">
+      <div class="span8" id="ricordi-recenti">
+
+        <div class="row titoletto">
+          <div class="span8">
+            I miei ultimi ricordi
+          </div>
+        </div>
+
+        <% for memory in @memories do %>
+            <%= render memory %>
+        <% end %>
+
+        <% if @memories.size == 0 %>
+            <%= render "memories/no_memories" %>
+        <% end %>
+
+        <div class="readmore row">
+          <div class="span8">
+            <%= link_to (image_tag ("Very-Basic-Clock-icon.png")), senior_memories_path(@senior) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="row span12">
+
+    <%= link_to "Modifica informazioni", edit_senior_path, :class => "btn" %>  &nbsp;
+    <%= link_to "Cancella account", senior_path, :class => "btn btn-danger", :confirm => 'Sei sicuro di voler cancellare questo account?', :method => :delete %>  &nbsp;
+    <%= link_to "Cambia utente", seniors_path, :class => "btn btn-success" %>
+
+</div>

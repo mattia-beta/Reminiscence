@@ -1,0 +1,88 @@
+.indietro
+{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+#btn-container
+{
+  background:#ebebeb;
+}
+
+.result
+{
+  display: none;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+
+  span
+  {
+    color: #C03;
+    font-weight: 700;
+  }
+}
+
+.add_form
+{
+  #new_memory
+  {
+        label
+        {
+            color: #333333 !important;
+            text-decoration: none !important;
+        }
+
+        a:hover
+        {
+            text-decoration: none !important;
+        }
+
+        #insert_foto
+        {
+          margin-top: 50px;
+        }
+  }
+}
+
+
+.modal-body p
+ {
+    margin: 10px;
+    text-align: justify;
+    line-height: 20pt;
+ }
+
+ #modal-foto
+ {
+     padding-right: 20px;
+ }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+  .bottom-zero
+  {
+    margin-bottom: 0px !important;
+  }
+
+  .box_grigio
+  {
+    margin-bottom: 0px;
+  }
+
+  #new_memory
+  {
+    #foto
+    {
+      text-align: center;
+    }
+  }
+
+  .suggest
+  {
+    margin-bottom: 0px;
+  }
+
+}

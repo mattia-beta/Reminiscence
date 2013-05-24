@@ -1,0 +1,172 @@
+#title_bar
+{
+   margin-bottom: 30px;
+   font-size: 18pt;
+
+   img
+   {
+       padding-right: 10px;
+   }
+}
+
+#senior_index
+{
+      background-color: #ededed;
+      margin-bottom: 60px;
+
+      border-color: #dedede;
+      border-width: 1px;
+      border-style: solid;
+
+
+      margin-left: 30px;
+
+      .index_image_img
+      {
+            //bordo bianco
+            background-color: white;
+            padding: 10px;
+
+            //bordo
+            border-color: #d4d4d4;
+            border-style: solid;
+            border-width: 1px;
+
+            //ombrina
+            -moz-box-shadow: 2px 6px 10px #cacaca;
+            -webkit-box-shadow: 2px 6px 10px #cacaca;
+            box-shadow: 2px 6px 10px #cacaca;
+      }
+
+      .index_image
+        {
+            margin-left: 27px;
+
+            .span
+            {
+                margin-left: 0px;
+            }
+       }
+
+       .index_name
+       {
+            font-weight: bold;
+            text-align: center;
+
+            padding-top: 20px;
+            padding-bottom: 40px;
+
+            font-size: 14pt;
+
+            margin-left: 27px;
+
+           .span
+             {
+             margin-left: 0px;
+           }
+       }
+
+       .index_container
+       {
+            padding: 44px 0px 30px 0px;
+
+            .span4
+              {
+                margin-left: 0px;
+            }
+       }
+
+      #add_new
+      {
+           margin-top: 20px;
+
+           img
+           {
+              border-style: none;
+           }
+      }
+}
+
+.blue_text
+{
+    color: #009DFF;
+}
+
+@media (min-width: 980px) and (max-width: 1200px)
+{
+  #senior_index
+    {
+      margin-left: 20px;
+
+      .index_container
+        {
+          .span4
+            {
+              margin: 0px 70px 0px 0px;
+              margin-left: 42px;
+          }
+      }
+  }
+
+  #ricordi-recenti
+  {
+    .item
+    {
+      .span2
+      {
+        img
+        {
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px)
+{
+  .blocco
+    {
+    margin-top: 10px !important;
+  }
+
+  #senior_index
+    {
+      margin-left: 20px;
+
+      .index_container
+        {
+          .span4
+            {
+            margin: 0px 80px 0px 25px;
+          }
+      }
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+  .blocco
+    {
+    margin-top: 10px !important;
+  }
+
+  #senior_index
+    {
+      margin-left: 0;
+  }
+
+  #add_new
+    {
+    text-align: center;
+  }
+
+  #ricordi-recenti
+  {
+    .titoletto
+    {
+      padding-left: 10px;
+    }
+  }
+}

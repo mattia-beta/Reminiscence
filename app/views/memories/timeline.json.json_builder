@@ -1,0 +1,24 @@
+timeline do
+
+     headline "La tua vita"
+     type "default"
+     text "a portata di dito"
+     startDate "2012,1,26"
+
+     date @memories do |memory|
+           startDate memory.data
+           headline memory.titolo
+           text memory.testo
+
+           asset do
+                if memory.image.to_s != ""
+                    media memory.image.to_s
+                else
+                    media "/photo-gallery-icon.jpg"
+                end
+
+                credit ""
+                caption ""
+           end
+     end
+end

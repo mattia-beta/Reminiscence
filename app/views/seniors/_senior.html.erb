@@ -1,0 +1,22 @@
+<div class="span4">
+    <center>
+        <div class="row index_image">
+            <div class="span4">
+                <%=  img_path = senior.image_url.to_s
+                if img_path == ""
+                link_to (image_tag "no_avatar.jpg", :size => "300x150"), senior
+                else
+                link_to (image_tag img_path, :size => "300x150", :class => "index_image_img"), senior
+                end
+                %>
+
+            </div>
+        </div>
+
+        <div class="row index_name">
+            <div class="span4">
+                <%=  senior.name.titleize + " " + senior.surname.titleize  %>
+            </div>
+        </div>
+    </center>
+</div>

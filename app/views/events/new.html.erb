@@ -1,0 +1,46 @@
+<div class="row add_form blocco">
+
+  <h1>Nuovo evento</h1> <br><br>
+
+  <%= form_for @event, :html => {:multipart => true} do |f| %>
+
+      <div class="span4 offset2">
+
+        <%= f.label :name, "Nome evento (es. prima guerra mondiale)" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :description, "Descrizione evento (es. la guerra mondialeè.. ed è scoppiata perchè..)" %>
+        <%= f.text_area :description %>
+
+        <%= f.label :date, "Anno in cui è successo evento (es. 10/02/1954)" %>
+        <%= f.text_field :date %>
+
+        <%= f.label :kind, "Tipo (es. guerra)" %>
+        <%= f.text_field :kind  %>
+
+      </div>
+
+      <div class="span4">
+
+        <%=  f.label :image, "Foto evento nell'anno dichiarato" %>
+        <%= f.file_field :image %>
+
+      </div>
+
+      <div class="span2">
+
+        &nbsp;
+
+      </div>
+
+      <div class="row span12">
+
+        <br><br>
+        <%= f.submit "Inserisci evento", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+  <% end %>
+
+
+</div>

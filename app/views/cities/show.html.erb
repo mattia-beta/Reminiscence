@@ -1,0 +1,12 @@
+<div class="blocco row span12">
+
+        <h3>NOME: <%= @city.name %></h3>
+
+        <h3 style="color:gray">DESC: <%= @city.description %></h3>
+
+        <h3>ANNO: <%= @city.year %></h3>
+
+        <%= image_tag @city.image_url.to_s, :size => "300x100" %>
+
+</div>
+

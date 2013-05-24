@@ -1,0 +1,60 @@
+body
+{
+}
+
+@mixin polaroid
+{
+    //bordo bianco
+    background-color: white;
+    padding: 10px;
+
+    //bordo
+    border-color: #d4d4d4;
+    border-style: solid;
+    border-width: 1px;
+
+    //ombrina
+    -moz-box-shadow: 2px 6px 10px #cacaca;
+    -webkit-box-shadow: 2px 6px 10px #cacaca;
+    box-shadow: 2px 6px 10px #cacaca;
+}
+
+#memory-show
+{
+    .show-ricordo
+    {
+      margin-top: 50px;
+
+      #image img
+      {
+        @include polaroid;
+      }
+
+      #testi
+      {
+        margin-bottom: 80px;
+        text-align: justify;
+        margin-top: 10px;
+        color: #333333;
+
+        #titolo
+        {
+          color: #000000;
+        }
+
+        #testo_racconto
+        {
+          color: #666666;
+          padding-right: 60px;
+          line-height: 24px;
+          font-size: 13pt;
+        }
+
+        .info
+        {
+          color: gray;
+        }
+      }
+    }
+
+}

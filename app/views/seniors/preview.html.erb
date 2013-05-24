@@ -1,0 +1,91 @@
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+      <%= image_tag("write.png", :size => "70x70") %>
+      Il profilo <span class="blue_text">pubblico</span> di <%= @senior.name + " " + @senior.surname %>
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+
+<div id="preview">
+      <div class="row">
+
+        <div class="span6 offset1" id="dati">
+
+
+              <div class="row span6" id="ricordi-preview">
+                <% if @memories.size == 0 %>
+                    <div class="no-memory">
+                        Nessun ricordo disponibile
+                    </div>
+                <% end %>
+
+
+                    <% for memory in @memories %>
+
+                         <div class="row ricordo">
+
+                           <div class="span2">
+
+                             <%=  link_to (image_tag memory.image_url.to_s, :size => "300x150"), "#" %>
+
+                           </div>
+
+                           <div class="span4">       <br>
+                                <p class="titolo">
+                                    <%= memory.titolo %>  <br>
+                                </p>
+
+                                <p class="testo">
+                                    <%= memory.testo %>  <br>
+                                </p>
+
+                                <p class="data">
+                                <%= memory.data.to_time.strftime('%B %e %Y') %>   <br>
+                                </p>
+
+                           </div>
+                         </div>
+
+                        <hr/>
+
+                    <% end %>
+
+              </div>
+
+        </div>
+
+        <div class="span4" id="foto">
+             <%= image_tag @senior.image_url.to_s, :size => "300x160" %>
+
+             <div class="row span4" id="sottomenu">
+                <% if is_friend? session[:myself], @senior.id %>
+                    <%= link_to "Sei gia amico", "#" %>
+                <% else %>
+                    <%= link_to "Aggiungi amico", friendships_path(:friend_id => @senior, :senior_id => session[:myself]), :method => :post %>
+                <% end %>
+             </div>
+
+             <div class="row span3" id="info">
+                    Mi chiamo <b><%= @senior.name + " " + @senior.surname%></b>    <br>
+                    e sono nata il <b><%= @senior.birthday.to_time.strftime('%B %e %Y') %></b>   <br>
+                    nella città di <b><%= @senior.city %></b>      <br>
+             </div>
+
+        </div>
+
+      </div>
+</div>

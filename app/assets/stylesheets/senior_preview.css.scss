@@ -1,0 +1,95 @@
+@mixin polaroid
+{
+    //bordo bianco
+    background-color: white;
+    padding: 10px;
+
+    //bordo
+    border-color: #d4d4d4;
+    border-style: solid;
+    border-width: 1px;
+
+    //ombrina
+    -moz-box-shadow: 2px 6px 10px #cacaca;
+    -webkit-box-shadow: 2px 6px 10px #cacaca;
+    box-shadow: 2px 6px 10px #cacaca;
+}
+
+#preview
+{
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+    #dati
+    {
+
+    }
+
+    #foto  img
+    {
+         @include polaroid;
+    }
+
+    #foto-ricordo
+    {
+        margin-bottom: 20px;;
+
+    }
+
+    #ricordi-preview
+    {
+        margin-top: 30px;
+        margin-left: 0px;
+
+        .ricordo
+        {
+            margin-bottom: 20px;
+
+            .titolo
+            {
+                font-weight: bold;
+            }
+
+            .testo
+            {
+                color: #7a7a7a;
+                line-height: 20pt;
+            }
+
+            .data
+             {
+                text-align: right;
+             }
+        }
+
+        img
+        {
+            padding-top: 25px;
+        }
+
+        .no-memory
+        {
+            background-color: #ededed;
+            border: solid 1px #dedede;
+            padding: 20px 30px;
+        }
+    }
+
+    #sottomenu
+    {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    #info
+    {
+        background-color: #EDEDED;
+        border: 1px solid #DEDEDE;
+        margin-left: 46px;
+        margin-right: -90px;
+        margin-top: 20px;
+        padding: 16px 0 16px 58px;
+        text-align: left;
+        line-height: 30px;
+    }
+}

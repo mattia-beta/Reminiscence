@@ -1,0 +1,94 @@
+#faq
+  {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  text-align: left;
+
+  .accordion
+    {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
+
+
+.menu-faq
+  {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+
+  .bottone
+    {
+    padding: 20px 20px 20px 20px;
+    margin-left: 0px;
+  }
+
+  .bottone-testo
+    {
+    margin-left: -15px;
+    font-size: 12pt;
+    text-decoration: none;
+    color: #666;
+  }
+
+  .b-right
+    {
+    border-right: 1px solid #b8b8b8;
+  }
+
+  .b-bottom
+    {
+    border-bottom: 1px solid #b8b8b8;
+  }
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1200px)
+{
+  #faq
+    {
+    .accordion
+      {
+      width: 100%;
+    }
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px)
+{
+  #faq
+    {
+    .accordion
+      {
+      width: 100%;
+    }
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px)
+{
+  #faq
+    {
+    .accordion
+      {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+//faq 1
+
+#bottoni
+  {
+  margin-top: 20px;
+  margin-bottom: 40px;;
+}

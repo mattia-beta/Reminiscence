@@ -1,0 +1,43 @@
+<div class="row add_form blocco">
+
+  <h1>Nuovo oggetto</h1> <br><br>
+
+  <%= form_for @thing, :html => {:multipart => true} do |f| %>
+
+      <div class="span4 offset2">
+
+        <%= f.label :name, "Nome dell'oggetto" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :description, "Descrizione dell'oggetto)" %>
+        <%= f.text_field :description %>
+
+        <%= f.label :kind, "Tipo di oggetto (auto, coltello, ecc)" %>
+        <%= f.text_field :kind %>
+
+      </div>
+
+      <div class="span4">
+
+        <%=  f.label :image, "Foto oggetto" %>
+        <%= f.file_field :image %>
+
+      </div>
+
+      <div class="span2">
+
+        &nbsp;
+
+      </div>
+
+      <div class="row span12">
+
+        <br><br>
+        <%= f.submit "Inserisci oggetto", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+  <% end %>
+
+
+</div>

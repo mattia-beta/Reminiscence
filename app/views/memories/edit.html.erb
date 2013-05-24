@@ -1,0 +1,104 @@
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+            <%= image_tag("write.png", :size => "70x70") %>
+            <span class="blue_text">Modifica</span> il tuo ricordo
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+<div class="row box_grigio">
+  &nbsp;
+</div>
+
+
+<div class="row">
+  <div class="span12">
+
+    <% if @memory.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            <!-- pluralize rende plurale parola-->
+            The form contains <%= pluralize(@memory.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @memory.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="row add_form">
+
+  <%= form_for @memory, :html => {:multipart => true}, :url => url_for(:controller => 'memories', :action => 'update') do |f| %>
+
+      <div class="span5 offset1">
+
+        <%= f.label :titolo, "Dai un titolo al tuo racconto" %>
+        <%= f.text_field :titolo %>
+
+        <%= f.label :luogo, "Dove si sono svolti i fatti?" %>
+        <%= f.text_field :luogo %>
+
+        <%= f.label :data, "Quando si sono svolti i fatti? (gg/mm/aaaa)" %>
+        <%= f.text_field :data %>
+
+        <%= f.label :testo, "Scrivi il tuo ricordo." %>
+        <%= f.text_area :testo, :size => "64x9" %>
+
+        <%= f.label :privato, "Vuoi renderlo pubblico?"  %>
+
+        <div class="slideThree">
+          <%= f.check_box :privato, :id => "slideThree", :class => "hidden" %>
+          <label for="slideThree"></label>
+        </div>
+
+
+        <br> <br>
+        <%= f.submit "Aggiorna ricordo", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+      <div class="span5">
+
+        <%=  img_path = @memory.image_url.to_s
+             if img_path == ""
+                 link_to (image_tag "no_avatar.jpg", :size => "300x150"), "#"
+             else
+                 link_to (image_tag img_path, :size => "250x250", :class => "index_image_img"), "#"
+             end
+        %> <br>  <br>
+
+
+        <%=  f.label :image, "Cambia la foto" %>
+        <%= f.file_field :image %>
+
+      </div>
+
+  <% end %>
+
+
+</div>
+
+
+
+
+
+

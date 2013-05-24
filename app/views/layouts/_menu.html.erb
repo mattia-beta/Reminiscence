@@ -1,0 +1,59 @@
+<div class="navbar navbar-fixed-top navbar-inverse" id="main-menu">
+  <div class="navbar-inner">
+
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+
+      <%= if session[:user_id].nil?
+              link_to "REMINISCENCE", root_path, class: "brand", id: "nome_app"
+          else
+              link_to "REMINISCENCE", home_callback_path, class: "brand", id: "nome_app"
+          end
+      %>
+
+      <div class="container nav-collapse">
+        <ul class="nav">
+              <li>
+                  <%= link_to " scopri come funziona", demo_path, :class => "icon-info-sign icona-demo" %>
+              </li>
+
+              <li>
+                    <%= link_to " serve aiuto?", faq_path, :class => "icon-question-sign icona-aiuto" %>
+              </li>
+        </ul>
+
+
+        <% if !session[:user_id].nil? %>
+            <div class="notices pull-right">
+
+              <!--<ul class="nav">
+                    <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestione account <b class="caret"></b></a>
+
+                          <ul class="dropdown-menu">
+                                <li><a href="#">Modifica informazioni</a></li>
+                                <li><a href="#">Cancella account</a></li>
+                          </ul>
+                    </li>
+              </ul>-->
+
+
+              <ul class="nav">
+                <li><%= link_to "Esci", user_logout_path %></li>
+              </ul>
+
+            </div>
+        <% end %>
+
+      </div>
+      <!--/.nav-collapse -->
+
+    </div>
+
+  </div>
+</div>

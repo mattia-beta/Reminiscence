@@ -1,0 +1,92 @@
+<div class="row blocco" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+        <a href="javascript:history.back()">
+            <%= image_tag("indietro.png", :size => "35x35") %>
+        </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+      <%= image_tag("write.png", :size => "70x70") %>
+      Trova i tuoi <span class="blue_text">amici</span>
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+
+<%= render "layouts/error" %>
+
+
+<div id="friendships">
+
+     <div class="row" id="ricerca-amici">
+
+         <label for="nome-amico">Scrivi la persona da cercare:</label>
+
+         <input type="text" id="nome-amico">
+         <a href="#" class="btn btn-primary" id="btn-cerca">Cerca</a>
+
+         <script>
+               $(document).ready(function()
+               {
+                   $("#btn-cerca").click(function()
+                   {
+                       location.href = "find?search=" + $("#nome-amico").val();
+                   });
+
+               });
+         </script>
+     </div>
+
+
+
+      <div class="row">
+
+        <% for senior in @seniors %>
+            <% if senior.id != @myself %>
+
+            <div class="span4 friend">
+              <center>
+
+                    <div class="row index_image">
+
+                      <div class="span4">
+                        <%=  img_path = senior.image_url.to_s
+                             if img_path == ""
+                                 link_to (image_tag "no_avatar.jpg", :size => "300x150"), senior_preview_path(senior)
+                             else
+                                 link_to (image_tag img_path, :size => "300x150", :class => "foto"), senior_preview_path(senior)
+                             end
+                        %>
+                      </div>
+
+                    </div>
+
+                    <div class="row index_name">
+                      <div class="span4">
+                        <%=  senior.name.titleize + " " + senior.surname.titleize  %>      <br>
+                        <% if is_friend? @myself, senior.id %>
+                            <%= link_to "Sei gia amico", "#" %>
+                        <% else %>
+                            <%= link_to "Aggiungi amico", friendships_path(:friend_id => senior, :senior_id => @myself), :method => :post %>
+                        <% end %>
+                      </div>
+                    </div>
+
+              </center>
+            </div>
+
+          <%  end %>
+        <%  end %>
+      </div>
+
+</div>
+
+
+

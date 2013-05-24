@@ -1,0 +1,12 @@
+<div class="blocco row span12">
+
+  <h3>NOME: <%= @thing.name %></h3>
+
+  <h3 style="color:gray">DESC: <%= @thing.description %></h3>
+
+  <h3>TIPO: <%= @thing.kind %></h3>
+
+  <%= image_tag @thing.image_url.to_s, :size => "300x100" %>
+
+</div>
+

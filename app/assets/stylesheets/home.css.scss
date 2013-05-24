@@ -1,0 +1,347 @@
+.nonnino
+{
+    background: url("nonnino.jpg") no-repeat;
+    height: 663px;
+
+    border-color: #DEDEDE;
+    border-style: solid;
+    border-width: 1px;
+    background-size: contain;
+}
+
+#nome_app
+{
+  font-family: 'Roboto Slab', cursive;
+  font-size: 24px;
+  color: rgb(200, 200, 200);
+}
+
+@mixin polaroid
+{
+    //bordo bianco
+    background-color: white;
+    padding: 10px;
+
+    //bordo
+    border-color: #d4d4d4;
+    border-style: solid;
+    border-width: 1px;
+
+    //ombrina
+    -moz-box-shadow: 2px 6px 10px #cacaca;
+    -webkit-box-shadow: 2px 6px 10px #cacaca;
+    box-shadow: 2px 6px 10px #cacaca;
+}
+
+@mixin box
+{
+    background-color: white;
+    border-color: gray gray gray gray;
+    border-style: solid solid solid solid;
+    border-width: 1px 1px 1px 1px;
+}
+
+.box_home
+{
+    @include box;
+    margin-top: 80px;
+    padding: 30px 10px 35px 40px;
+    background: rgba(255, 255, 255, 0.4);
+
+    span
+        {
+        color: #333;
+        font-size: 24pt;
+        text-align: center;
+    }
+
+  .slogan
+        {
+        margin-left: -15px;
+
+        h1, h3
+            {
+            line-height: 30px;
+            margin: 0 0 0 0;
+
+            img
+                {
+                margin-top: -4px;
+                width: 25px;
+                height: 15px;
+            }
+        }
+    }
+
+    img
+        {
+        margin-top: 20px;
+    }
+}
+
+.barra
+{
+    margin-top: 40px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+@mixin presentazione
+{
+    margin-top: 100px;
+    margin-bottom: 40px;
+
+    font-family: 'Noto Sans', sans-serif;
+
+    img
+     {
+        padding: 20px 20px 20px 20px;
+        @include polaroid;
+    }
+
+    img:hover
+    {
+        -webkit-transform: rotate(-4deg); -moz-transform: rotate(-4deg); -o-transform: rotate(-4deg);
+        -webkit-transition: all 0.5s ease-out; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease;
+    }
+
+    p
+        {
+        padding: 40px 40px 20px 20px;
+    }
+}
+
+.presentazione_grigia
+{
+    @include presentazione;
+    margin-left: 0px;
+
+    .presentazione_grigia_box
+     {
+        background-color: #ededed;
+
+        border-color: #c2c2c2 #c2c2c2 #c2c2c2 #c2c2c2;
+        border-style: solid double solid solid;
+        border-width: 1px 6px 1px 1px;
+    }
+}
+
+.presentazione_bianca
+{
+    @include presentazione;
+    margin-bottom: 60px;
+    margin-left: 25px;
+
+
+    .presentazione_bianca_box
+     {
+        border-color: #c2c2c2 #c2c2c2 #c2c2c2 #c2c2c2;
+        border-style: solid solid solid double;
+        border-width: 1px 1px 1px 6px;
+     }
+}
+
+.barra-item
+{
+}
+
+.barra-img
+{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.barra-testo
+{
+    text-align: justify;
+    font-size: 13pt;
+    line-height: 34px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.barra-testo-center
+{
+    text-align: center;
+    font-size: 15pt;
+    line-height: 44px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #3c3c3c;
+}
+
+footer
+    {
+    background-color: #fff;
+    height: 50px;
+
+/*
+    span
+        {
+        color: white;
+        margin-top: 20px;
+    }
+
+    center
+        {
+        padding-top: 10px;
+    }
+*/
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 980px) and (max-width: 1200px) {
+    .nonnino
+        {
+        height: 532px;
+    }
+
+    .box_home
+        {
+        padding: 30px 70px 40px 50px;
+
+        .slogan
+            {
+            margin-left: 10px;
+        }
+    }
+
+    .presentazione_grigia p
+        {
+        padding: 27px 40px 20px 20px;
+    }
+
+    .presentazione_bianca
+        {
+        margin-left: 0px;
+
+        p
+            {
+            padding: 15px 40px 20px 20px;
+        }
+
+    }
+    .presentazione_grigia_box
+        {
+        margin-left: 45px
+    };
+ }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .presentazione_grigia
+      {
+      img
+        {
+        padding: 20px 20px 20px 20px;
+        margin-left: -20px;
+      }
+
+      p
+        {
+        padding: 15px 30px 0 30px;
+      }
+    }
+
+    .presentazione_grigia_box
+      {
+      margin-left: 55px;
+    }
+
+    .presentazione_bianca
+      {
+      margin-left: -20px;
+
+      img
+        {
+        padding: 20px 20px 20px 20px;
+        margin-left: 10px;
+      }
+
+      p
+        {
+        padding: 15px 30px 0 25px
+      }
+    }
+
+    .nonnino
+        {
+        height: 410px;
+    }
+
+    .box_home
+        {
+        padding: 25px 80px 30px 40px;
+        margin-top: 40px;
+
+        .slogan
+            {
+            margin-left: 0;
+
+            h3
+                {
+                width: 275px;
+            }
+        }
+    }
+    .presentazione_grigia img
+        {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .presentazione_bianca img
+        {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .presentazione_grigia_box
+        {
+        margin-left: 35px;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .box_home
+        {
+        margin-top: 60%;
+        margin-bottom: 25px;
+
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 25px 25px 25px 25px;
+        text-align: center;
+
+        .slogan
+            {
+            margin-left: 0;
+        }
+    }
+
+    .nonnino
+        {
+        height: 100%;
+    }
+
+    .presentazione_bianca p
+        {
+        padding: 20px 40px 20px 40px;
+    }
+
+    .presentazione_grigia p
+        {
+        padding: 20px 40px 20px 40px;
+    }
+
+    .presentazione_grigia img
+        {
+        margin-bottom: 30px;
+    }
+
+    .presentazione_bianca img
+        {
+        padding: 20px 20px 20px 20px;
+        margin-top: 30px;
+    }
+}

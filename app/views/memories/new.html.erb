@@ -1,0 +1,141 @@
+<div class="row blocco bottom-zero" id="title_bar">
+  <div class="span1 indietro">
+    <center>
+      <a href="javascript:history.back()">
+        <%= image_tag("indietro.png", :size => "35x35") %>
+      </a>
+    </center>
+  </div>
+
+  <div class="span10">
+    <center>
+      <%= image_tag("write.png", :size => "70x70") %>
+      Inserisci un <span class="blue_text">ricordo</span>
+    </center>
+  </div>
+
+  <div class="span1">
+    &nbsp;
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="span12">
+
+    <% if @memory.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            <!-- pluralize rende plurale parola-->
+            The form contains <%= pluralize(@memory.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @memory.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="row add_form">
+
+  <%= form_for @memory, :url => url_for(:controller => 'memories', :action => 'create'), :html => {:multipart => true} do |f| %>
+
+      <div class="span4 offset2">
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Scrivi il titolo del tuo racconto">-->
+          <%= f.label :titolo, "Dai un titolo al tuo racconto" %>
+          <%= f.text_field :titolo %>
+        <!--</a>-->
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Scrivi il luogo del tuo racconto">-->
+          <%= f.label :luogo, "Dove si sono svolti i fatti?" %>
+          <%= f.text_field :luogo %>
+        <!--</a>-->
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Scrivi l'anno o la data del ricordo">-->
+          <%= f.label :data, "Quando si sono svolti i fatti? (gg/mm/aaaa)" %>
+          <%= f.text_field :data %>
+        <!--</a>-->
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Racconta cos'e' successo">-->
+          <%= f.label :testo, "Scrivi il tuo ricordo." %>
+          <%= f.text_area :testo, :size => '64x9' %>
+        <!--</a>-->
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Scegli se vuoi pubblicare il tuo racconto">-->
+          <%= f.label :privato, "Vuoi renderlo pubblico?"  %>
+
+          <div class="slideThree">
+            <%= f.check_box :privato, :id => "slideThree", :class => "hidden" %>
+            <label for="slideThree"></label>
+          </div>
+        <!--</a>-->
+
+        <!--<a href="#" class="pop-over" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Carica una foto inerente al ricordo">-->
+          <%=  f.label :image, "Carica una tua foto", :id => "insert_foto" %>
+          <%=  f.file_field :image %>
+        <!--</a>-->
+
+      </div>
+
+      <div class="span6" id="foto">
+        <!-- for each IMG, printa codice -->
+        <%= image_tag("trento.png", :size => "250x150") %>
+        <%= image_tag("povo.png", :size => "250x150") %>
+        <%= image_tag("panda.png", :size => "250x150") %>
+      </div>
+
+      <div class="span6 offset2 pull-right suggest" id="ricordi_amici">
+        <!--<div>-->
+        <!--<p>Anche il tuo amico <a href="#">Gianni Pluto</a> ha un ricordo che riguarda <a href="#">Trento nel 1965.</a></p>-->
+        <!--<p>Clicca <a href="#">qui</a> per leggerlo.</p>-->
+        <!--</div>-->
+
+      </div>
+
+      <div class="row span12">
+
+        <br> <br>
+        <%= f.submit "Inserisci ricordo", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+  <% end %>
+
+
+  <!-- Modal -->
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="modal-title">Modal header</h3>
+    </div>
+
+    <div class="modal-body">
+      <div style="float: left" id="modal-foto">
+        <img src="" title="">
+      </div>
+
+      <div>
+        <p id="modal-desc">One fine body…</p>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+    </div>
+  </div>
+
+
+</div>
+
+<%= javascript_include_tag "memory_tellme" %>
+
+<!--
+    javascript_include_tag "popover"
+-->

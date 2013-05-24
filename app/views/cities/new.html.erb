@@ -1,0 +1,43 @@
+<div class="row add_form blocco">
+
+  <h1>Nuova città</h1> <br><br>
+
+  <%= form_for @city, :html => {:multipart => true} do |f| %>
+
+      <div class="span4 offset2">
+
+        <%= f.label :name, "Nome della citta? (es. Trento)" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :description, "Descrizione della città (es. Trento è una città del Trentino..)" %>
+        <%= f.text_field :description %>
+
+        <%= f.label :year, "Anno in cui è stata scattata la foto (es. 1954)" %>
+        <%= f.text_field :year %>
+
+      </div>
+
+      <div class="span4">
+
+        <%=  f.label :image, "Foto della città nell'anno dichiarato (es. 1954)" %>
+        <%= f.file_field :image %>
+
+      </div>
+
+      <div class="span2">
+
+        &nbsp;
+
+      </div>
+
+      <div class="row span12">
+
+        <br><br>
+        <%= f.submit "Inserisci città", class: "btn btn-large btn-primary" %>  &nbsp;
+
+      </div>
+
+  <% end %>
+
+
+</div>
